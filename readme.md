@@ -114,7 +114,7 @@ class WarehouseApi {
     required String password,
   }) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/users/login'),
+      Uri.parse('$baseUrl/api/v1/users/login'),
       headers: _jsonHeaders(),
       body: jsonEncode({
         'username': username,
@@ -150,7 +150,7 @@ class WarehouseApi {
 ### Example usage in Flutter
 
 ```dart
-final api = WarehouseApi(baseUrl: 'http://10.0.2.2:5000/api/v1/');
+final api = WarehouseApi(baseUrl: 'http://10.0.2.2:5000');
 
 final user = await api.createUser(
   username: 'alex',
